@@ -1,15 +1,12 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('preloader');
     const content = document.getElementById('content');
+    const quote = document.getElementById('quote');
 
-    // Hide preloader initially
-    preloader.style.display = 'none';
-    const apiUrl = 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com';
+    const apiUrl = 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
 
     async function fetchQuote() {
         try {
-            // show preloader and hide content after fetching
             preloader.style.display = 'flex';
             content.style.display = 'none';
 
@@ -26,14 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
-            console.log(data);
-            quote.innerText = data.data;
+            quote.innerText = data.text || data.data || "No quote found.";
 
-            // Hide preloader and show content after fetching
             preloader.style.display = 'none';
             content.style.display = 'flex';
         } catch (error) {
             console.error('Error fetching quote:', error);
+            quote.innerText = "Failed to load quote. Try again.";
+            preloader.style.display = 'none';
+            content.style.display = 'flex';
         }
     }
 
