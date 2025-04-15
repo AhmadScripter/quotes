@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('preloader');
     const content = document.getElementById('content');
     const quote = document.getElementById('quote');
+    const author = document.getElementById('author');
 
-    const apiUrl = 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote';
+    const apiUrl = 'https://inspirational-quote-generator.p.rapidapi.com/quoteGenerator';
 
     async function fetchQuote() {
         try {
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'GET',
                 headers: {
                     'X-RapidAPI-Key': 'd77e8efd8cmsh17d2c3a506c7339p1612fdjsn70f0fd0b1ea4',
-                    'X-RapidAPI-Host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com'
+                    'X-RapidAPI-Host': 'inspirational-quote-generator.p.rapidapi.com'
                 }
             });
 
@@ -23,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
-            quote.innerText = data.text || data.data || "No quote found.";
+            console.log(data)
+            quote.innerText = data.quote || data.data || "No quote found.";
+            author.innerText = data.author || data.data;
 
             preloader.style.display = 'none';
             content.style.display = 'flex';
