@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hide preloader initially
     preloader.style.display = 'none';
-    const apiUrl = 'https://thought-of-the-day.p.rapidapi.com/thought';
+    const apiUrl = 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com';
 
     async function fetchQuote() {
         try {
