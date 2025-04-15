@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'GET',
                 headers: {
                     'X-RapidAPI-Key': 'd77e8efd8cmsh17d2c3a506c7339p1612fdjsn70f0fd0b1ea4',
-                    'X-RapidAPI-Host': 'thought-of-the-day.p.rapidapi.com'
+                    'X-RapidAPI-Host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com'
                 }
             });
 
