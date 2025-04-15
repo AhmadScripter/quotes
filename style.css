@@ -214,12 +214,18 @@ body{
     z-index: 2;
 }
 
-.quote-div p {
+.quote-div p#quote {
     font-size: 18px;
     color: #EFECEC;
     font-family: sans-serif;
     margin-top: 10px;
     z-index: 2;
+}
+.quote-div p#author{
+    margin: 0;
+    font-weight: bold;
+    color: #EFECEC;
+    font-style: italic;
 }
 
 button {
